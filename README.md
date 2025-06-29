@@ -25,7 +25,6 @@ This version is the starting one. The functionality is not yet there i.e. the sa
 
 - React
 - HTML + CSS (handcrafted, with CSS variables)
-- [`html2canvas`](https://github.com/niklasvh/html2canvas) for PNG snapshot
 - Git + GitHub for version control
 - Vercel for deployment
 
