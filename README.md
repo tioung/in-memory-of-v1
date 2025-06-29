@@ -17,7 +17,7 @@ This version is the starting one. The functionality is not yet there i.e. the sa
 
 ## 🚀 Try It Live
 
-👉 [in-memory-of-v2 on Vercel](https://in-memory-of-v1.vercel.app)
+👉 [in-memory-of-v1 on Vercel](https://in-memory-of-v1.vercel.app)
 
 > No data is stored or sent to a server — everything happens in your browser.
 
