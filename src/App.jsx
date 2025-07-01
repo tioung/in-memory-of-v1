@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  console.log(12555)
+  // console.log(12555)
   const [previewUrl, setPreviewUrl] = useState(null);
   const [tributeText, setTributeText] = useState('');
   const [name, setName] = useState('');
