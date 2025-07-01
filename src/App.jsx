@@ -1,11 +1,11 @@
-import './App.css';
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
-  // console.log(12555)
+  console.log(12);
   const [previewUrl, setPreviewUrl] = useState(null);
-  const [tributeText, setTributeText] = useState('');
-  const [name, setName] = useState('');
+  const [tributeText, setTributeText] = useState("");
+  const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleFileChange = (event) => {
@@ -20,24 +20,24 @@ function App() {
     setSubmitted(true);
     // document.body.classList.add('submitted-blur');
     setTimeout(() => {
-      const tributeSection = document.querySelector('.tribute-display');
-      tributeSection?.scrollIntoView({ behavior: 'smooth' });
+      const tributeSection = document.querySelector(".tribute-display");
+      tributeSection?.scrollIntoView({ behavior: "smooth" });
     }, 100); // slight delay to ensure element is rendered
   };
 
   const handleStartAgain = () => {
     setPreviewUrl(null);
-    setTributeText('');
-    setName('');
+    setTributeText("");
+    setName("");
     setSubmitted(false);
     // document.body.classList.remove('submitted-blur');
   };
 
   const handleSave = () => {
     if (previewUrl) {
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = previewUrl;
-      link.download = `${name || 'tribute'}.jpg`; // Customize filename
+      link.download = `${name || "tribute"}.jpg`; // Customize filename
       link.click();
     }
   };
@@ -48,13 +48,15 @@ function App() {
       <h2 className="subtitle">
         {submitted && name.trim()
           ? `${name.trim()}`
-          : 'Upload a photo of your loved one, write a tribute, and share memories.'}
+          : "Upload a photo of your loved one, write a tribute, and share memories."}
       </h2>
 
       <div className="form-card">
         {!submitted && (
           <>
-            <label htmlFor="file-upload" className="file-button">Upload Photo</label>
+            <label htmlFor="file-upload" className="file-button">
+              Upload Photo
+            </label>
             <input id="file-upload" type="file" onChange={handleFileChange} />
           </>
         )}
@@ -65,11 +67,14 @@ function App() {
           </div>
         )} */}
         {previewUrl && (
-          <div className={`image-preview fade-in ${submitted ? 'blurred-image' : ''}`}>
+          <div
+            className={`image-preview fade-in ${
+              submitted ? "blurred-image" : ""
+            }`}
+          >
             <img src={previewUrl} alt="Preview" />
           </div>
         )}
-
 
         {!submitted && (
           <div className="tribute-form">
@@ -88,7 +93,9 @@ function App() {
               value={tributeText}
               onChange={(e) => setTributeText(e.target.value)}
             />
-            <button className="primary-button" onClick={handleSubmit}>Submit</button>
+            <button className="primary-button" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         )}
 
@@ -100,8 +107,12 @@ function App() {
 
         {submitted && (
           <div className="action-buttons">
-            <button className="secondary-button" onClick={handleStartAgain}>Start Again</button>
-            <button className="secondary-button" onClick={handleSave}>Save</button>
+            <button className="secondary-button" onClick={handleStartAgain}>
+              Start Again
+            </button>
+            <button className="secondary-button" onClick={handleSave}>
+              Save
+            </button>
           </div>
         )}
       </div>
